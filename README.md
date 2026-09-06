@@ -47,65 +47,75 @@ they belong in [extras/courses](extras/courses.md), [extras/readings](extras/rea
 
 - [Foundations of Public Administration](#foundations-of-public-administration)
 - [Public Organizations and Management](#public-organizations-and-management)
-- [Law, Ethics, and Accountability](#law-ethics-and-accountability)
-- [Policy Process and Implementation](#policy-process-and-implementation)
+- [Public Budgeting and Financial Management](#public-budgeting-and-financial-management)
+- [Policy Process, Analysis, and Implementation](#policy-process-analysis-and-implementation)
+- [Administrative Law, Ethics, and Accountability](#administrative-law-ethics-and-accountability)
 
 ## How to use this curriculum
 
 ### Core Sections
 
-These four sections form the essential backbone of the discipline. Study them in this exact order:
+These five sections form the essential backbone of the discipline. Study them in this exact order:
 
-1. **Foundations of Public Administration**  
-   Start here. This section gives you the basic concepts, history, and context you need before anything else makes sense.
+1. **Foundations of Public Administration**
+   Start here. This section establishes the historical origins, theoretical paradigms, institutional setting, and economic fundamentals of public sector governance.
 
-2. **Public Organizations and Management**  
-   Next, learn how public organizations actually work and how they are led and managed in practice.
+2. **Public Organizations and Management**
+   Next, explore how public agencies are structured, how public personnel systems operate, and how administrators manage organizational performance and public value.
 
-3. **Law, Ethics, and Accountability**  
-   Then move to the legal rules, ethical standards, and oversight mechanisms that shape and constrain all public administrative action.
+3. **Public Budgeting and Financial Management**
+   Then, study the fiscal engine of government: how public revenues are raised, how budgets are formulated and politically negotiated, and how public funds are managed.
 
-4. **Policy Process and Implementation**  
-   Finally, understand how public policies are created, decided upon, and carried out in the real world.
+4. **Policy Process, Analysis, and Implementation**
+   Understand how public policies move through the policy cycle, how alternatives are systematically analyzed, and how frontline administrators deliver services.
+
+5. **Administrative Law, Ethics, and Accountability**
+   Finally, examine the constitutional rules, administrative jurisprudence, ethical codes, and democratic oversight mechanisms that constrain and legitimize administrative power.
 
 ## Foundations of Public Administration
 
 | Subject | Why study? | Resource |
 | --- | --- | --- |
-| Introduction to Public Administration | Establishes the field’s scope, history, paradigms, and role in governance. | [Public Administration: Concepts and Cases (Shafritz et al.) – Archive.org](https://archive.org/details/publicadministra0000unse_y2z7) |
-| Public Administration Theory | Understands classical, New Public Management, governance, and public value paradigms. | [Classics of Public Administration (Shafritz & Hyde) – Archive.org](https://archive.org/details/classicsofpublic00shaf) |
-| Government & Political Systems | Provides institutional context for administrative action. | [Introduction to Political Science – OpenStax](https://openstax.org/details/books/introduction-political-science) |
-| Economics for the Public Sector | Grounds decision-making in efficiency, incentives, and public goods. | [Core-Econ: The Economy – CORE-Econ (free online book)](https://www.core-econ.org/the-economy/) |
+| Introduction to Public Administration | Establishes the field’s scope, historical evolution, core principles, and role in democratic governance. | Jay M. Shafritz, E. W. Russell, Christopher P. Borick, and Albert C. Hyde, *Introducing Public Administration* (Routledge) / [Public Administration: Concepts and Cases (Stillman) – Archive.org](https://archive.org/details/publicadministra0000unse_y2z7) |
+| Public Administration Theory | Examines classical bureaucracy, human relations, New Public Management, and public governance paradigms. | [Classics of Public Administration (Shafritz & Hyde) – Archive.org](https://archive.org/details/classicsofpublic00shaf) |
+| Government & Political Systems | Provides the constitutional and political institutional context within which administrative agencies operate. | [Introduction to Political Science – OpenStax](https://openstax.org/details/books/introduction-political-science) |
+| Economics for the Public Sector | Explains market failures, externalities, public goods, and the economic rationale for government intervention. | [The Economy – CORE-Econ](https://www.core-econ.org/the-economy/) / Joseph E. Stiglitz and Jay K. Rosengard, *Economics of the Public Sector* (W. W. Norton) |
 
 ## Public Organizations and Management
 
 | Subject | Why study? | Resource |
 | --- | --- | --- |
-| Public Organizational Theory | Explains structure, hierarchy, coordination, and institutional behavior. | [Organization Theory in Public Administration – NAPA open resources](https://napawash.org/) (Note: NAPA hosts various reports/resources; no single exact title match, but this is the organization's open portal for related materials.) |
-| Public Management & Leadership | Distinguishes management from governance and leadership in public contexts. | [Harvard Kennedy School – Public Leadership Lectures (YouTube)](https://www.youtube.com/user/HarvardKennedySchool) (Explore the channel for leadership-focused lectures and series.) |
-| Human Resource Management (Public Sector) | Covers merit systems, motivation, labor relations, and ethics. | [U.S. OPM HRM Overview (official site)](https://www.opm.gov/policy-data-oversight/human-capital-framework/) |
-| Performance Management & Public Value | Measures outcomes, accountability, and service effectiveness. | [Mark Moore – Public Value lectures (Harvard Kennedy, YouTube)](https://www.youtube.com/results?search_query=mark+moore+public+value+harvard) (Search results include key interviews and discussions on the concept.) |
+| Public Organization Theory | Analyzes organizational behavior, bureaucratic structure, inter-agency coordination, and institutional change. | Hal G. Rainey, Sergio Fernandez, and Deanna Malatesta, *Understanding and Managing Public Organizations* (Jossey-Bass / Wiley) |
+| Public Management & Leadership | Distinguishes public management from private administration and explores leadership models in public contexts. | Montgomery Van Wart, *Leadership in Public Organizations: An Introduction* (Routledge) |
+| Public Human Resource Management | Covers merit systems, civil service protections, public sector recruitment, motivation, and collective bargaining. | Norma M. Riccucci (Ed.), *Public Personnel Management: Current Concerns, Future Challenges* (Routledge) |
+| Performance Management & Public Value | Explores strategic planning, outcome measurement, operational efficiency, and public value creation. | Mark H. Moore, *Creating Public Value: Strategic Management in Government* (Harvard University Press) |
 
-## Law, Ethics, and Accountability
-
-| Subject | Why study? | Resource |
-| --- | --- | --- |
-| Administrative Law (Foundations) | Ensures legality, due process, and limits on administrative power. | [Cornell Legal Information Institute – Administrative Law](https://www.law.cornell.edu/wex/administrative_law) |
-| Ethics & Integrity in Public Service | Addresses corruption, conflicts of interest, and professional responsibility. | [OECD Public Integrity Handbook (free PDF)](https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/05/oecd-public-integrity-handbook_598692a5/ac8ed8e8-en.pdf) |
-| Accountability & Oversight | Understands auditing, ombudsmen, courts, and legislative control. | [World Bank – Accountability & Governance resources](https://www.worldbank.org/en/topic/governance/brief/accountability-and-governance) |
-| Transparency & Anti-Corruption | Examines openness, procurement integrity, and reform tools. | [Transparency International – Anti-Corruption Knowledge Hub](https://knowledgehub.transparency.org/) |
-
-## Policy Process and Implementation
+## Public Budgeting and Financial Management
 
 | Subject | Why study? | Resource |
 | --- | --- | --- |
-| Public Policy Process | Explains agenda-setting, formulation, adoption, implementation, and evaluation. | [An Introduction to the Policy Process (Birkland) – Archive.org](https://archive.org/details/introductiontopo0000birk) (Search Archive.org for available editions.) |
-| Policy Implementation & Street-Level Bureaucracy | Understands real-world delivery and discretion. | [Lipsky – Street-Level Bureaucracy (Archive.org)](https://archive.org/details/streetlevelburea0000lips) |
-| Governance & Networks | Examines collaborative and multi-actor public action. | [The New Public Governance? – Open-access journal articles](https://www.tandfonline.com/doi/full/10.1080/14719030802231475) (Key open-access article introducing the concept; search for related open papers.) |
+| Public Budgeting Systems & Politics | Analyzes the budgetary cycle, executive-legislative dynamics, incrementalism, and spending trade-offs. | Irene S. Rubin, *The Politics of Public Budgeting: Getting and Spending, Borrowing and Balancing* (CQ Press / SAGE) |
+| Public Financial Administration & Revenue | Explains government revenue sources (taxes, fees), capital budgeting, debt issuance, and financial reporting. | John L. Mikesell, *Fiscal Administration: Analysis and Applications for the Public Sector* (Cengage) |
+| Intergovernmental Fiscal Relations | Examines fiscal federalism, intergovernmental grants, revenue sharing, and local government finance. | Ronald C. Fisher, *State and Local Public Finance* (Routledge) |
+
+## Policy Process, Analysis, and Implementation
+
+| Subject | Why study? | Resource |
+| --- | --- | --- |
+| Public Policy Process | Explains agenda-setting, problem definition, policy formulation, adoption, and legitimation. | [An Introduction to the Policy Process (Birkland) – Archive.org](https://archive.org/details/introductiontopo0000birk) |
+| Policy Analysis & Program Evaluation | Introduces criteria-based decision analysis, cost-benefit reasoning, and systematic program outcome assessment. | David L. Weimer and Aidan R. Vining, *Policy Analysis: Concepts and Practice* (Routledge) |
+| Policy Implementation & Street-Level Bureaucracy | Examines frontline service delivery, administrative discretion, rule compliance, and implementation failures. | [Street-Level Bureaucracy: Dilemmas of the Individual in Public Services (Lipsky) – Archive.org](https://archive.org/details/streetlevelburea0000lips) |
+| Governance & Collaborative Networks | Analyzes cross-sector collaboration, public-private partnerships, and network governance. | Stephen P. Osborne (Ed.), *The New Public Governance? Emerging Perspectives on the Theory and Practice of Public Governance* (Routledge) |
+
+## Administrative Law, Ethics, and Accountability
+
+| Subject | Why study? | Resource |
+| --- | --- | --- |
+| Administrative Law (Foundations) | Governs administrative procedures, rulemaking, adjudication, due process, and judicial review of agency actions. | [Cornell Legal Information Institute – Administrative Law Overview](https://www.law.cornell.edu/wex/administrative_law) / William F. Funk and Richard H. Seamon, *Examples & Explanations: Administrative Law* (Wolters Kluwer) |
+| Ethics & Integrity in Public Service | Addresses conflicts of interest, ethical decision-making frameworks, codes of conduct, and public duty. | Carol W. Lewis and Stuart C. Gilman, *The Ethics Challenge in Public Service: A Problem-Solving Guide* (Jossey-Bass) / [OECD Public Integrity Resources](https://www.oecd.org/en/topics/public-integrity.html) |
+| Accountability & Oversight | Examines legislative scrutiny, administrative tribunals, ombudsman functions, and institutional accountability models. | Mark Bovens, *Analysing and Assessing Accountability: A Conceptual Framework* (European Law Journal) / Mark Bovens, Robert E. Goodin, and Thomas Schillemans (Eds.), *The Oxford Handbook of Public Accountability* (Oxford University Press) |
+| Transparency & Anti-Corruption | Covers freedom of information laws, open government data, whistleblowing protections, and anti-corruption systems. | [Anti-Corruption Knowledge Hub – Transparency International](https://knowledgehub.transparency.org/) |
 
 # Code of conduct
 
 [Hocbigg's code of conduct](https://github.com/hocbigg/code-of-conduct).
-
-
-
