@@ -1,122 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
 
-<title>Great Readings</title>
-<link rel="stylesheet" href="/public-administration/style.css">
-<meta name="description" content="">
+  <title>Great Readings</title>
+  <meta name="description" content="Great Readings curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
 
-<link rel="canonical" href="https://hocbigg.github.io/public-administration/">
+  <link rel="canonical" href="https://hocbigg.github.io/public-administration/extras/readings.html">
+  <meta property="og:title" content="Great Readings">
+  <meta property="og:description" content="Great Readings curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/public-administration/extras/readings.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
 
-<meta property="og:title" content="Great Readings">
-<meta property="og:description" content="">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hocbigg.github.io/public-administration/">
-<meta name="author" content="hocbigg">
-<link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
 </head>
-
 <body>
 
-<nav>
-<a href="/">Hocbigg</a>
-<a href="/public-administration/">Public-Administration</a>
-<a href="/public-administration/advanced_topics.html">Advanced Topics</a>
-<a href="/public-administration/extras/courses.html">Extra Courses</a>
-<a href="/public-administration/extras/readings.html">Extra Reading</a>
-<a href="https://github.com/hocbigg/public-administration/" target="_blank">View on Github</a>
-</nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<main>
-<article>
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/public-administration/">Public Administration</a></li>
+      <li><a href="/public-administration/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/public-administration/extras/readings.html">Extra Readings</a></li>
+      <li><a href="/public-administration/extras/courses.html">Extra Courses</a></li>
+      <li><a href="https://github.com/hocbigg/public-administration" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
 
 <h1 id="great-readings">Great Readings</h1>
-<p>This document consists of great books or articles on Public Administration.
-Some are here because there is a course covering the same material;
-some are just great books that you should read at some point in your career.</p>
-<p>Once you have made it through most of the curriculum, knowing whether a book is worth your time will become easier.
-Or, if you are struggling in one of the courses, perhaps reading a book on the subject will help.</p>
-<h2 id="introduction">Introduction</h2>
-<table>
+<p>This curated collection brings together field-defining books, seminal essays, and landmark monographs across the discipline of Public Administration. Rather than standard introductory survey textbooks, these readings represent the conceptual breakthroughs, institutional debates, and enduring controversies that have shaped modern understandings of state power, bureaucratic behavior, public budgeting, and democratic accountability.</p>
+<h2 id="foundations-administrative-theory">Foundations &amp; Administrative Theory</h2>
+<div class="table-wrapper" tabindex="0" role="region" aria-label="Scrollable table"><table>
 <thead>
 <tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: center;">Author(s)</th>
+<th>Title</th>
+<th>Author(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Bureaucracy-Government-Agencies-They-What/dp/0465007856">Bureaucracy: What Government Agencies Do and Why They Do It</a></td>
-<td style="text-align: center;">James Q. Wilson</td>
+<td><a href="https://www.jstor.org/stable/2139277" target="_blank" rel="noopener noreferrer"><em>The Study of Administration</em></a></td>
+<td>Woodrow Wilson</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Mastering-Public-Administration-Dwight-Waldo/dp/1452240043">Mastering Public Administration: From Max Weber to Dwight Waldo</a></td>
-<td style="text-align: center;">Brian R. Fry and Jos C. N. Raadschelders</td>
+<td><a href="https://archive.org/details/frommaxweberessa00webe" target="_blank" rel="noopener noreferrer"><em>Bureaucracy</em> (from <em>From Max Weber: Essays in Sociology</em>)</a></td>
+<td>Max Weber</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/functionsofexecu00barn" target="_blank" rel="noopener noreferrer"><em>The Functions of the Executive</em></a></td>
+<td>Chester I. Barnard</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/administrativebe00simo" target="_blank" rel="noopener noreferrer"><em>Administrative Behavior: A Study of Decision-Making Processes in Administrative Organization</em></a></td>
+<td>Herbert A. Simon</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/in.ernet.dli.2015.74031" target="_blank" rel="noopener noreferrer"><em>The Administrative State: A Study of the Political Theory of American Public Administration</em></a></td>
+<td>Dwight Waldo</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/tvandgrassrootss00selzrich" target="_blank" rel="noopener noreferrer"><em>TVA and the Grass Roots: A Study in the Sociology of Formal Organization</em></a></td>
+<td>Philip Selznick</td>
 </tr>
 </tbody>
-</table>
-<h2 id="public-policy">Public Policy</h2>
-<table>
+</table></div>
+<h2 id="bureaucratic-behavior-implementation-discretion">Bureaucratic Behavior, Implementation &amp; Discretion</h2>
+<div class="table-wrapper" tabindex="0" role="region" aria-label="Scrollable table"><table>
 <thead>
 <tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: center;">Author(s)</th>
+<th>Title</th>
+<th>Author(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Big-Con-Consulting-Industry-Governments/dp/0593492676">The Big Con: How the Consulting Industry Weakens Our Businesses, Childhoods Our Governments, and Warps Our Economies</a></td>
-<td style="text-align: center;">Mariana Mazzucato and Rosie Collington</td>
+<td><a href="https://www.jstor.org/stable/973677" target="_blank" rel="noopener noreferrer"><em>The Science of "Muddling Through"</em></a></td>
+<td>Charles E. Lindblom</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Showdown-Gucci-Gulch-Lawmakers-Lobbyists/dp/0394758110">Showdown at Gucci Gulch: Lawmakers, Lobbyists, and the Unlikely Triumph of Tax Reform</a></td>
-<td style="text-align: center;">Jeffrey H. Birnbaum and Alan S. Murray</td>
+<td><a href="https://archive.org/details/insidebureaucrac00down" target="_blank" rel="noopener noreferrer"><em>Inside Bureaucracy</em></a></td>
+<td>Anthony Downs</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/implementationho00pres" target="_blank" rel="noopener noreferrer"><em>Implementation: How Great Expectations in Washington Are Dashed in Oakland</em></a></td>
+<td>Jeffrey L. Pressman and Aaron Wildavsky</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/streetlevelburea0000lips" target="_blank" rel="noopener noreferrer"><em>Street-Level Bureaucracy: Dilemmas of the Individual in Public Services</em></a></td>
+<td>Michael Lipsky</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/bureaucracywhatg00wils" target="_blank" rel="noopener noreferrer"><em>Bureaucracy: What Government Agencies Do and Why They Do It</em></a></td>
+<td>James Q. Wilson</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/forgingofbureauc0000carp" target="_blank" rel="noopener noreferrer"><em>The Forging of Bureaucratic Autonomy: Reputations, Networks, and Policy Innovation in Executive Agencies, 1862–1928</em></a></td>
+<td>Daniel P. Carpenter</td>
 </tr>
 </tbody>
-</table>
-<h2 id="organizational-management">Organizational Management</h2>
-<table>
+</table></div>
+<h2 id="public-budgeting-polycentricity-institutional-choice">Public Budgeting, Polycentricity &amp; Institutional Choice</h2>
+<div class="table-wrapper" tabindex="0" role="region" aria-label="Scrollable table"><table>
 <thead>
 <tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: center;">Author(s)</th>
+<th>Title</th>
+<th>Author(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555">Thinking, Fast and Slow</a></td>
-<td style="text-align: center;">Daniel Kahneman</td>
+<td><a href="https://www.jstor.org/stable/1948194" target="_blank" rel="noopener noreferrer"><em>The Lack of a Budgetary Theory</em></a></td>
+<td>V. O. Key, Jr.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Metropolitan-Revolution-Cities-Fixing-Politics/dp/081572151X">The Metropolitan Revolution: How Cities and Metros Are Fixing Our Broken Politics and Fragile Economy</a></td>
-<td style="text-align: center;">Bruce Katz and Jennifer Bradley</td>
+<td><a href="https://archive.org/details/politicsofbudge00wild" target="_blank" rel="noopener noreferrer"><em>The Politics of the Budgetary Process</em></a></td>
+<td>Aaron Wildavsky</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/intellectualcris00ostr_0" target="_blank" rel="noopener noreferrer"><em>The Intellectual Crisis in American Public Administration</em></a></td>
+<td>Vincent Ostrom</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/governingcommons0000ostr" target="_blank" rel="noopener noreferrer"><em>Governing the Commons: The Evolution of Institutions for Collective Action</em></a></td>
+<td>Elinor Ostrom</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/bureaucracyrepre0000nisk" target="_blank" rel="noopener noreferrer"><em>Bureaucracy and Representative Government</em></a></td>
+<td>William A. Niskanen</td>
 </tr>
 </tbody>
-</table>
-<h2 id="international-and-development">International and Development</h2>
-<table>
+</table></div>
+<h2 id="public-value-democratic-governance-administrative-ethics">Public Value, Democratic Governance &amp; Administrative Ethics</h2>
+<div class="table-wrapper" tabindex="0" role="region" aria-label="Scrollable table"><table>
 <thead>
 <tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: center;">Author(s)</th>
+<th>Title</th>
+<th>Author(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Origins-Political-Order-Prehuman-Revolution/dp/0374533229">The Origins of Political Order: From Prehuman Times to the French Revolution</a></td>
-<td style="text-align: center;">Francis Fukuyama</td>
+<td><a href="https://www.jstor.org/stable/972907" target="_blank" rel="noopener noreferrer"><em>Administrative Responsibility in Democratic Government</em></a></td>
+<td>Herman Finer</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Wealth-Poverty-Nations-Some-Rich/dp/0393318885">The Wealth and Poverty of Nations: Why Some Are So Rich and Some So Poor</a></td>
-<td style="text-align: center;">David S. Landes</td>
+<td><a href="https://doi.org/10.1111/j.1467-9299.1991.tb00779.x" target="_blank" rel="noopener noreferrer"><em>A Public Management for All Seasons?</em></a></td>
+<td>Christopher Hood</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/creatingpublicva0000moor" target="_blank" rel="noopener noreferrer"><em>Creating Public Value: Strategic Management in Government</em></a></td>
+<td>Mark H. Moore</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/spiritofpublicad0000fred" target="_blank" rel="noopener noreferrer"><em>The Spirit of Public Administration</em></a></td>
+<td>H. George Frederickson</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/newpublicservice0000denh" target="_blank" rel="noopener noreferrer"><em>The New Public Service: Serving, Not Steering</em></a></td>
+<td>Janet V. Denhardt and Robert B. Denhardt</td>
+</tr>
+<tr>
+<td><a href="https://books.google.com/books?isbn=9780824780326" target="_blank" rel="noopener noreferrer"><em>Ethics for Bureaucrats: An Essay on Law and Values</em></a></td>
+<td>John A. Rohr</td>
 </tr>
 </tbody>
-</table>
-</article>
-</main>
+</table></div>
+<h2 id="state-capacity-governance-transformation-critical-perspectives">State Capacity, Governance Transformation &amp; Critical Perspectives</h2>
+<div class="table-wrapper" tabindex="0" role="region" aria-label="Scrollable table"><table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Author(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://archive.org/details/embeddedautonomy0000evan" target="_blank" rel="noopener noreferrer"><em>Embedded Autonomy: States and Industrial Transformation</em></a></td>
+<td>Peter B. Evans</td>
+</tr>
+<tr>
+<td><a href="https://archive.org/details/transformationof00kett" target="_blank" rel="noopener noreferrer"><em>The Transformation of Governance: Public Administration for Twenty-First Century America</em></a></td>
+<td>Donald F. Kettl</td>
+</tr>
+<tr>
+<td><a href="https://books.google.com/books?isbn=9780801442926" target="_blank" rel="noopener noreferrer"><em>State-Building: Governance and World Order in the 21st Century</em></a></td>
+<td>Francis Fukuyama</td>
+</tr>
+<tr>
+<td><a href="https://books.google.com/books?isbn=9780593492673" target="_blank" rel="noopener noreferrer"><em>The Big Con: How the Consulting Industry Weakens Our Businesses, Infantilizes Our Governments, and Warps Our Economies</em></a></td>
+<td>Mariana Mazzucato and Rosie Collington</td>
+</tr>
+</tbody>
+</table></div>
+    </article>
+  </main>
 
 </body>
 </html>

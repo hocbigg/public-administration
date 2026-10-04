@@ -1,186 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
 
-<title>Great Courses</title>
-<link rel="stylesheet" href="/public-administration/style.css">
-<meta name="description" content="">
+  <title>Great Courses</title>
+  <meta name="description" content="Great Courses curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
 
-<link rel="canonical" href="https://hocbigg.github.io/public-administration/">
+  <link rel="canonical" href="https://hocbigg.github.io/public-administration/extras/courses.html">
+  <meta property="og:title" content="Great Courses">
+  <meta property="og:description" content="Great Courses curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/public-administration/extras/courses.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
 
-<meta property="og:title" content="Great Courses">
-<meta property="og:description" content="">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hocbigg.github.io/public-administration/">
-<meta name="author" content="hocbigg">
-<link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
 </head>
-
 <body>
 
-<nav>
-<a href="/">Hocbigg</a>
-<a href="/public-administration/">Public-Administration</a>
-<a href="/public-administration/advanced_topics.html">Advanced Topics</a>
-<a href="/public-administration/extras/courses.html">Extra Courses</a>
-<a href="/public-administration/extras/readings.html">Extra Reading</a>
-<a href="https://github.com/hocbigg/public-administration/" target="_blank">View on Github</a>
-</nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<main>
-<article>
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/public-administration/">Public Administration</a></li>
+      <li><a href="/public-administration/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/public-administration/extras/readings.html">Extra Readings</a></li>
+      <li><a href="/public-administration/extras/courses.html">Extra Courses</a></li>
+      <li><a href="https://github.com/hocbigg/public-administration" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
 
 <h1 id="great-courses">Great Courses</h1>
-<p>This is a list of high-quality courses that, for one reason or another, didn't make it into the curriculum.
-The most common reasons are that the course isn't available often enough,
-or that there was an alternative that fit better into the curriculum.</p>
-<h2 id="introduction">Introduction</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Courses</th>
-<th style="text-align: center;">Duration</th>
-<th style="text-align: center;">Effort</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PL7MwBWZ0A4rIoguGvYJ4AzjVTTb_BqH74">Public Administration Lectures (CSS/PMS)</a></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLidJ5yvj1LlYNO8ftYCdkqB52RyAHJbfj">Public Administration 101</a></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-policy">Public Policy</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Courses</th>
-<th style="text-align: center;">Duration</th>
-<th style="text-align: center;">Effort</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://oyc.yale.edu/political-science/plsc-118">The Moral Foundations of Politics</a></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://pll.harvard.edu/course/justice">Justice: What’s the Right Thing to Do?</a></td>
-<td style="text-align: center;">12 weeks</td>
-<td style="text-align: center;">2-4 hours/week</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://pll.harvard.edu/course/public-economics">Public Economics</a></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.openculture.com/public-economics-and-finance-a-free-online-course-from-nyu">Public Economics and Finance</a></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h2 id="organizational-management-and-leadership">Organizational Management and Leadership</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Courses</th>
-<th style="text-align: center;">Duration</th>
-<th style="text-align: center;">Effort</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://ocw.mit.edu/courses/res-11-004-facilitative-leadership-in-the-public-sector-fall-2024/">Facilitative Leadership in the Public Sector</a></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://pll.harvard.edu/course/leadership-purposeful-change-creating-public-value">Leadership for Purposeful Change: Creating Public Value</a></td>
-<td style="text-align: center;">7 weeks</td>
-<td style="text-align: center;">3-5 hours/week</td>
-</tr>
-</tbody>
-</table>
-<h2 id="environmental-policy">Environmental Policy</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Courses</th>
-<th style="text-align: center;">Duration</th>
-<th style="text-align: center;">Effort</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://oyc.yale.edu/environmental-studies/evst-255">Environmental Politics and Law</a></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h2 id="other">Other</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Courses</th>
-<th style="text-align: center;">Duration</th>
-<th style="text-align: center;">Effort</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://pll.harvard.edu/course/citizen-politics-america-public-opinion-elections-interest-groups-and-media">Citizen Politics in America: Public Opinion, Elections, Interest Groups, and the Media</a></td>
-<td style="text-align: center;">4 weeks</td>
-<td style="text-align: center;">2-4 hours/week</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://oyc.yale.edu/political-science/plsc-270">Capitalism: Success, Crisis, and Reform</a></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h2 id="online-learning-great-courses">Online Learning - Great Courses</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Courses</th>
-<th style="text-align: center;">Duration</th>
-<th style="text-align: center;">Effort</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.coursera.org/learn/learning-how-to-learn">Learning How to Learn</a></td>
-<td style="text-align: center;">4 weeks</td>
-<td style="text-align: center;">2 hours/week</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.coursera.org/learn/mindshift">Mindshift</a></td>
-<td style="text-align: center;">4 weeks</td>
-<td style="text-align: center;">2 hours/week</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a target="_blank" rel="noopener noreferrer" href="https://www.edx.org/learn/google-power-searching/google-power-searching-with-google">Powersearching with Google</a></td>
-<td style="text-align: center;">3 weeks</td>
-<td style="text-align: center;">4-6 hours/week</td>
-</tr>
-</tbody>
-</table>
-</article>
-</main>
+<p>This curated collection gathers exceptional university lecture series, full OpenCourseWare (OCW) offerings, and authoritative open-learning programs in Public Administration. These courses provide deep conceptual foundations, analytical frameworks, and practical governance insights directly from leading scholars and practitioners.</p>
+<h2 id="foundations-ethics-and-public-leadership">Foundations, Ethics, and Public Leadership</h2>
+<ul>
+<li><a href="https://pll.harvard.edu/course/justice" target="_blank" rel="noopener noreferrer">Justice: What's the Right Thing to Do? (Harvard University / Michael Sandel)</a></li>
+<li><a href="https://oyc.yale.edu/political-science/plsc-118" target="_blank" rel="noopener noreferrer">The Moral Foundations of Politics (Open Yale Courses / Ian Shapiro)</a></li>
+<li><a href="https://oyc.yale.edu/political-science/plsc-114" target="_blank" rel="noopener noreferrer">Introduction to Political Philosophy (Open Yale Courses / Steven B. Smith)</a></li>
+<li><a href="https://www.edx.org/learn/leadership/harvard-university-leadership-for-purposeful-change" target="_blank" rel="noopener noreferrer">Leadership for Purposeful Change: Creating Public Value (Harvard University / edX / Mark Moore)</a></li>
+<li><a href="https://www.edx.org/learn/leadership/harvard-university-exercising-leadership-foundational-principles" target="_blank" rel="noopener noreferrer">Exercising Leadership: Foundational Principles (Harvard University / edX / Ronald Heifetz)</a></li>
+</ul>
+<h2 id="public-policy-economics-and-financial-management">Public Policy, Economics, and Financial Management</h2>
+<ul>
+<li><a href="https://ocw.mit.edu/courses/14-41-public-finance-and-public-policy-fall-2024/" target="_blank" rel="noopener noreferrer">Public Finance and Public Policy (MIT OpenCourseWare / Jonathan Gruber)</a></li>
+<li><a href="https://www.edx.org/learn/finance/international-monetary-fund-public-financial-management" target="_blank" rel="noopener noreferrer">Public Financial Management (International Monetary Fund / edX)</a></li>
+<li><a href="https://www.coursera.org/learn/infrastructure-investing" target="_blank" rel="noopener noreferrer">Financing and Investing in Infrastructure (Università Bocconi / Coursera / Stefano Gatti)</a></li>
+<li><a href="https://mitxonline.mit.edu/courses/course-v1:MITxT+JPAL101x/" target="_blank" rel="noopener noreferrer">Evaluating Social Programs (MITx / edX / Esther Duflo &amp; Rachel Glennerster)</a></li>
+<li><a href="https://www.coursera.org/learn/using-public-policy-for-social-change" target="_blank" rel="noopener noreferrer">Using Public Policy for Social Change (University of Michigan / Coursera / Barry Checkoway)</a></li>
+</ul>
+<h2 id="administrative-law-regulatory-policy-and-environmental-governance">Administrative Law, Regulatory Policy, and Environmental Governance</h2>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLWwcngsYgoUXTBxtM1cr9ThwGsTTR4XU_" target="_blank" rel="noopener noreferrer">Administrative Law [No. 86] (The Federalist Society / YouTube)</a></li>
+<li><a href="https://oyc.yale.edu/environmental-studies/evst-255" target="_blank" rel="noopener noreferrer">Environmental Politics and Law (Open Yale Courses / John Wargo)</a></li>
+<li><a href="https://oyc.yale.edu/political-science/plsc-270" target="_blank" rel="noopener noreferrer">Capitalism: Success, Crisis, and Reform (Open Yale Courses / Douglas W. Rae)</a></li>
+<li><a href="https://www.coursera.org/learn/constitution" target="_blank" rel="noopener noreferrer">Introduction to Key Constitutional Concepts and Supreme Court Cases (University of Pennsylvania / Coursera / Kermit Roosevelt III)</a></li>
+</ul>
+<h2 id="digital-governance-innovation-and-international-administration">Digital Governance, Innovation, and International Administration</h2>
+<ul>
+<li><a href="https://www.coursera.org/learn/digitalgovernance" target="_blank" rel="noopener noreferrer">Digital Governance (Erasmus University Rotterdam / Coursera / Evert Stamhuis et al.)</a></li>
+<li><a href="https://www.coursera.org/learn/international-organizations-management" target="_blank" rel="noopener noreferrer">International Organizations Management (University of Geneva / Coursera / Gilbert Probst &amp; Bruce Jenks)</a></li>
+<li><a href="https://www.coursera.org/learn/eu-making-europe-work" target="_blank" rel="noopener noreferrer">EU Policy and Implementation: Making Europe Work! (Leiden University / Coursera / Bernard Steunenberg)</a></li>
+<li><a href="https://www.edx.org/learn/social-science/ku-leuven-introduction-to-global-governance" target="_blank" rel="noopener noreferrer">Introduction to Global Governance (KU Leuven / edX / Jan Wouters)</a></li>
+<li><a href="https://www.coursera.org/learn/artificial-intelligence-in-government" target="_blank" rel="noopener noreferrer">Artificial Intelligence in Government (University of Maryland, College Park / Coursera / Joe Mariani)</a></li>
+</ul>
+    </article>
+  </main>
 
 </body>
 </html>

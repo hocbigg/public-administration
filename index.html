@@ -1,236 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
 
-<title>Hocbigg - Public Administration</title>
-<link rel="stylesheet" href="/public-administration/style.css">
-<meta name="description" content="Path to a free self-taught education in Public Administration!">
+  <title>Hocbigg - Public Administration</title>
+  <meta name="description" content="Path to a free self-taught education in Public Administration!">
+  <meta name="author" content="hocbigg">
 
-<link rel="canonical" href="https://hocbigg.github.io/public-administration/">
+  <link rel="canonical" href="https://hocbigg.github.io/public-administration/">
+  <meta property="og:title" content="Hocbigg - Public Administration">
+  <meta property="og:description" content="Path to a free self-taught education in Public Administration!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/public-administration/">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
 
-<meta property="og:title" content="Hocbigg - Public Administration">
-<meta property="og:description" content="Path to a free self-taught education in Public Administration!">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hocbigg.github.io/public-administration/">
-<meta name="author" content="hocbigg">
-<link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
 </head>
-
 <body>
 
-<nav>
-<a href="/">Hocbigg</a>
-<a href="/public-administration/">Public-Administration</a>
-<a href="/public-administration/advanced_topics.html">Advanced Topics</a>
-<a href="/public-administration/extras/courses.html">Extra Courses</a>
-<a href="/public-administration/extras/readings.html">Extra Reading</a>
-<a href="https://github.com/hocbigg/public-administration/" target="_blank">View on Github</a>
-</nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<main>
-<article>
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/public-administration/">Public Administration</a></li>
+      <li><a href="/public-administration/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/public-administration/extras/readings.html">Extra Readings</a></li>
+      <li><a href="/public-administration/extras/courses.html">Extra Courses</a></li>
+      <li><a href="https://github.com/hocbigg/public-administration" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
 
+  <main id="main-content">
+    <article>
 <header class="page-header">
-  <img src="/images/logo.png" alt="">
+  <img src="/images/logo.png" alt="Hocbigg logo">
   <h1>Hocbigg - Public Administration</h1>
+  <p class="page-subtitle">Path to a free self-taught education in Public Administration!</p>
+  <p class="last-updated"><small>Last updated on: <time datetime="2026-09-30">2026-09-30</time></small></p>
 </header>
-
-<h1 id="contents">Contents</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Public administration is the science and art of translating democratic decisions, statutory mandates, and public policy into functioning public services. Where political science asks how power is contested and won, public administration investigates how power is operationalized: how government agencies manage public funds, structure civil services, design regulatory rules, deliver frontline services, and generate public value while remaining accountable to constitutional law and the public interest.</p>
+<p>This curriculum is built for independent self-directed learners seeking a rigorous, practical grounding in the public and nonprofit sectors. It assumes no previous background in political science, economics, or administrative law. Every foundational concept — from market failure economics to civil service merit systems — is introduced from first principles using open-access textbooks, university open courseware, practical field manuals, and canonical monographs.</p>
+<h3 id="how-to-navigate-the-curriculum">How to Navigate the Curriculum</h3>
+<p>The curriculum is structured into four interconnected thematic clusters that move from external institutional context to internal operations, policy execution, and constitutional oversight:</p>
 <ul>
-<li><a href="#summary">Summary</a></li>
-<li><a href="#communities">Communities</a></li>
-<li><a href="#curriculum">Curriculum</a></li>
-<li><a href="#code-of-conduct">Code of conduct</a></li>
+<li><strong>Institutional and Conceptual Foundations:</strong> Start with <em>Introduction to Public Administration</em>, <em>Public Administration Theory</em>, <em>Government and Political Institutions</em>, and <em>Economics for the Public Sector</em>. These four subjects establish the intellectual evolution of the discipline, the separation-of-powers environment that constrains agencies, and the economic rationale for government intervention (such as public goods and market failures).</li>
+<li><strong>Internal Operations and Management:</strong> Next, examine how public agencies function from the inside. Study <em>Public Organization Theory</em>, <em>Public Management, Strategic Leadership, and Public Value</em>, <em>Public Human Resource Management</em>, and <em>Public Budgeting and Financial Management</em>. This sequence covers organizational dynamics, executive decision-making, civil service merit protections, and the twin engines of government finance: political budget allocation and applied fiscal administration.</li>
+<li><strong>The Policy Cycle and Frontline Delivery:</strong> Turn to <em>Public Policy Process</em>, <em>Policy Analysis and Program Evaluation</em>, and <em>Policy Implementation and Street-Level Bureaucracy</em>. This group traces policies from agenda setting and problem definition through criteria-based decision analysis to frontline delivery, where caseworkers, inspectors, and other street-level bureaucrats exercise administrative discretion.</li>
+<li><strong>Democratic Accountability and Legal Limits:</strong> Conclude with <em>Administrative Law and Regulatory Procedure</em> and <em>Ethics, Integrity, and Public Accountability</em>. These subjects examine the procedural boundaries of delegated administrative power (such as notice-and-comment rulemaking, due process, and judicial review) along with the ethical frameworks and oversight mechanisms necessary to combat corruption and protect public trust.</li>
 </ul>
-<h1 id="summary">Summary</h1>
-<p>The Public Administration curriculum is a <strong>complete education in Public Administration</strong> using online materials.
-It emphasizes a logical progression from foundational concepts to advanced applications, balancing theoretical understanding, practical skills, and synthesis.</p>
-<h2 id="organization">Organization</h2>
-<p>This repository is organized into three main components:</p>
+<p>While the institutional foundations should be completed first, the management and policy clusters can be studied either sequentially or concurrently depending on your specific learning goals.</p>
+<h3 id="scope">Scope</h3>
+<p>This curriculum focuses strictly on the mandatory undergraduate core of the discipline — the shared body of institutional, financial, organizational, and legal knowledge that every practitioner and analyst needs. It deliberately leaves out specialized econometric research methods, advanced quantitative modeling, and narrow subfields. </p>
+<p>Once you have established this foundational core, you can branch out into specialized areas through the companion guides in this series:</p>
 <ul>
-<li><strong>Core Curriculum</strong> (this page): the foundational knowledge of the field;</li>
-<li><strong><a href="advanced_topics.html">Advanced Topics</a></strong>: focused study in specific areas;</li>
+<li>Explore advanced subdisciplines — such as municipal project finance, algorithmic governance, comparative development administration, and nonprofit board governance — in <a href="advanced_topics.html">Advanced Topics</a>.</li>
+<li>Deepen your historical and theoretical understanding through landmark primary texts and essays in <a href="extras/readings.html">Readings</a>.</li>
+<li>Engage with complete recorded university lectures and specialized masterclasses in <a href="extras/courses.html">Courses</a>.</li>
 </ul>
-<p><strong>Process:</strong> Learners may work through the curriculum independently or collaboratively, and either sequentially or selectively.</p>
-<ul>
-<li>For simplicity, courses in the Core Curriculum are ordered according to their prerequisites.</li>
-<li>The Core Curriculum provides a shared foundation and is intended to be completed in full.</li>
-<li>Advanced Topics are optional; learners are encouraged to select one area of focus and complete all courses within that topic.</li>
-</ul>
-<p>Note: When there are courses or books that don't fit into the curriculum but are otherwise of high quality,
-they belong in <a href="extras/courses.html">extras/courses</a>, <a href="extras/readings.html">extras/readings</a>.</p>
-<p><strong><a href="/CONTRIBUTING.html">How to contribute</a></strong></p>
-<h1 id="communities">Communities</h1>
+<h3 id="communities">Communities</h3>
 <ul>
 <li>Subreddits:<ul>
-<li><a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/PublicAdministration/">r/PublicAdministration</a></li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/PublicPolicy/">r/PublicPolicy</a> </li>
+<li><a href="https://www.reddit.com/r/PublicAdministration/" target="_blank" rel="noopener noreferrer">r/PublicAdministration</a></li>
+<li><a href="https://www.reddit.com/r/PublicPolicy/" target="_blank" rel="noopener noreferrer">r/PublicPolicy</a> </li>
 </ul>
 </li>
-<li>You can also interact through <a target="_blank" rel="noopener noreferrer" href="https://github.com/hocbigg/public-administration/issues">GitHub issues</a>. If there is a problem with a course, or a change needs to be made to the curriculum, this is the place to start the conversation. Read more <a href="/CONTRIBUTING.html">here</a>.</li>
-<li>
-<p>Join our Discord server (for discussions around this and other curricula): </p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/KHqAv4Nvm5"><img alt="discord link" src="/assets/discord.png" /></a></p>
-</li>
+<li>You can also interact through <a href="https://github.com/hocbigg/public-administration/issues" target="_blank" rel="noopener noreferrer">GitHub issues</a>. If there is a problem with a course, or a change needs to be made to the curriculum, this is the place to start the conversation. Read more <a href="/CONTRIBUTING.html">here</a>.</li>
 </ul>
-<h1 id="curriculum">Curriculum</h1>
-<ul>
-<li><a href="#foundations-of-public-administration">Foundations of Public Administration</a></li>
-<li><a href="#public-organizations-and-management">Public Organizations and Management</a></li>
-<li><a href="#law-ethics-and-accountability">Law, Ethics, and Accountability</a></li>
-<li><a href="#policy-process-and-implementation">Policy Process and Implementation</a></li>
-</ul>
-<h2 id="how-to-use-this-curriculum">How to use this curriculum</h2>
-<h3 id="core-sections">Core Sections</h3>
-<p>These four sections form the essential backbone of the discipline. Study them in this exact order:</p>
-<ol>
-<li>
-<p><strong>Foundations of Public Administration</strong><br />
-   Start here. This section gives you the basic concepts, history, and context you need before anything else makes sense.</p>
-</li>
-<li>
-<p><strong>Public Organizations and Management</strong><br />
-   Next, learn how public organizations actually work and how they are led and managed in practice.</p>
-</li>
-<li>
-<p><strong>Law, Ethics, and Accountability</strong><br />
-   Then move to the legal rules, ethical standards, and oversight mechanisms that shape and constrain all public administrative action.</p>
-</li>
-<li>
-<p><strong>Policy Process and Implementation</strong><br />
-   Finally, understand how public policies are created, decided upon, and carried out in the real world.</p>
-</li>
-</ol>
-<h2 id="foundations-of-public-administration">Foundations of Public Administration</h2>
-<table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Why study?</th>
-<th>Resource</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Introduction to Public Administration</td>
-<td>Establishes the field’s scope, history, paradigms, and role in governance.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://archive.org/details/publicadministra0000unse_y2z7">Public Administration: Concepts and Cases (Shafritz et al.) – Archive.org</a></td>
-</tr>
-<tr>
-<td>Public Administration Theory</td>
-<td>Understands classical, New Public Management, governance, and public value paradigms.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://archive.org/details/classicsofpublic00shaf">Classics of Public Administration (Shafritz &amp; Hyde) – Archive.org</a></td>
-</tr>
-<tr>
-<td>Government &amp; Political Systems</td>
-<td>Provides institutional context for administrative action.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://openstax.org/details/books/introduction-political-science">Introduction to Political Science – OpenStax</a></td>
-</tr>
-<tr>
-<td>Economics for the Public Sector</td>
-<td>Grounds decision-making in efficiency, incentives, and public goods.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.core-econ.org/the-economy/">Core-Econ: The Economy – CORE-Econ (free online book)</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-organizations-and-management">Public Organizations and Management</h2>
-<table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Why study?</th>
-<th>Resource</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Public Organizational Theory</td>
-<td>Explains structure, hierarchy, coordination, and institutional behavior.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://napawash.org/">Organization Theory in Public Administration – NAPA open resources</a> (Note: NAPA hosts various reports/resources; no single exact title match, but this is the organization's open portal for related materials.)</td>
-</tr>
-<tr>
-<td>Public Management &amp; Leadership</td>
-<td>Distinguishes management from governance and leadership in public contexts.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/HarvardKennedySchool">Harvard Kennedy School – Public Leadership Lectures (YouTube)</a> (Explore the channel for leadership-focused lectures and series.)</td>
-</tr>
-<tr>
-<td>Human Resource Management (Public Sector)</td>
-<td>Covers merit systems, motivation, labor relations, and ethics.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.opm.gov/policy-data-oversight/human-capital-framework/">U.S. OPM HRM Overview (official site)</a></td>
-</tr>
-<tr>
-<td>Performance Management &amp; Public Value</td>
-<td>Measures outcomes, accountability, and service effectiveness.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=mark+moore+public+value+harvard">Mark Moore – Public Value lectures (Harvard Kennedy, YouTube)</a> (Search results include key interviews and discussions on the concept.)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="law-ethics-and-accountability">Law, Ethics, and Accountability</h2>
-<table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Why study?</th>
-<th>Resource</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Administrative Law (Foundations)</td>
-<td>Ensures legality, due process, and limits on administrative power.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.law.cornell.edu/wex/administrative_law">Cornell Legal Information Institute – Administrative Law</a></td>
-</tr>
-<tr>
-<td>Ethics &amp; Integrity in Public Service</td>
-<td>Addresses corruption, conflicts of interest, and professional responsibility.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/05/oecd-public-integrity-handbook_598692a5/ac8ed8e8-en.pdf">OECD Public Integrity Handbook (free PDF)</a></td>
-</tr>
-<tr>
-<td>Accountability &amp; Oversight</td>
-<td>Understands auditing, ombudsmen, courts, and legislative control.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/topic/governance/brief/accountability-and-governance">World Bank – Accountability &amp; Governance resources</a></td>
-</tr>
-<tr>
-<td>Transparency &amp; Anti-Corruption</td>
-<td>Examines openness, procurement integrity, and reform tools.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://knowledgehub.transparency.org/">Transparency International – Anti-Corruption Knowledge Hub</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="policy-process-and-implementation">Policy Process and Implementation</h2>
-<table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Why study?</th>
-<th>Resource</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Public Policy Process</td>
-<td>Explains agenda-setting, formulation, adoption, implementation, and evaluation.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://archive.org/details/introductiontopo0000birk">An Introduction to the Policy Process (Birkland) – Archive.org</a> (Search Archive.org for available editions.)</td>
-</tr>
-<tr>
-<td>Policy Implementation &amp; Street-Level Bureaucracy</td>
-<td>Understands real-world delivery and discretion.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://archive.org/details/streetlevelburea0000lips">Lipsky – Street-Level Bureaucracy (Archive.org)</a></td>
-</tr>
-<tr>
-<td>Governance &amp; Networks</td>
-<td>Examines collaborative and multi-actor public action.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.tandfonline.com/doi/full/10.1080/14719030802231475">The New Public Governance? – Open-access journal articles</a> (Key open-access article introducing the concept; search for related open papers.)</td>
-</tr>
-</tbody>
-</table>
-<h1 id="code-of-conduct">Code of conduct</h1>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/hocbigg/code-of-conduct">Hocbigg's code of conduct</a>.</p>
-</article>
-</main>
+<h2 id="curriculum">Curriculum</h2>
+<h3 id="introduction-to-public-administration">Introduction to Public Administration</h3>
+<p>Surveys the foundational scope, constitutional origins, historical evolution, and core operating principles of public sector administration.</p>
+<p><a href="https://scholarworks.uni.edu/facbook/1637/" target="_blank" rel="noopener noreferrer">Public Administration: The Essentials (Jayme L. Renfro)</a> - The primary open-access introductory textbook, providing a free, accessible overview of the history, institutional setting, and everyday practice of public administration.</p>
+<p><a href="https://books.google.com/books?isbn=9781032209340" target="_blank" rel="noopener noreferrer">Introducing Public Administration (Jay M. Shafritz et al.)</a> - A comprehensive commercial textbook alternative to Renfro, offering deeper coverage of administrative history, intergovernmental relations, and administrative culture.</p>
+<p><a href="https://books.google.com/books?isbn=9780618993093" target="_blank" rel="noopener noreferrer">Public Administration: Concepts and Cases (Richard J. Stillman II)</a> - A case-oriented alternative that teaches core concepts through classic essays paired with historical public sector case studies, ideal for inductive learners.</p>
+<h3 id="public-administration-theory">Public Administration Theory</h3>
+<p>Traces the intellectual paradigms of the discipline from classical bureaucracy and scientific management to New Public Management and public value governance.</p>
+<p><a href="https://books.google.com/books?isbn=9781305639034" target="_blank" rel="noopener noreferrer">Classics of Public Administration (Jay M. Shafritz &amp; Albert C. Hyde, Eds.)</a> - The canonical reader compiling foundational primary source essays from Woodrow Wilson, Max Weber, Chester Barnard, Herbert Simon, and Dwight Waldo.</p>
+<h3 id="government-and-political-institutions">Government and Political Institutions</h3>
+<p>Examines the constitutional rules, legislative oversight mechanisms, and intergovernmental dynamics that structure administrative power.</p>
+<p><a href="https://openstax.org/details/books/american-government-3e" target="_blank" rel="noopener noreferrer">American Government 3e (OpenStax)</a> - The core open-access textbook for understanding the constitutional bureaucracy, separation of powers, and federalism within a presidential administrative system.</p>
+<p><a href="https://openstax.org/details/books/introduction-political-science" target="_blank" rel="noopener noreferrer">Introduction to Political Science (OpenStax)</a> - An alternative open-access text for international learners seeking comparative regimes, state capacity, and institutional structures outside the United States model.</p>
+<p><a href="https://ocw.mit.edu/courses/11-002j-making-public-policy-fall-2014/" target="_blank" rel="noopener noreferrer">Making Public Policy (MIT OpenCourseWare)</a> - A complementary course pack that provides syllabus readings and lecture notes exploring how legislative coalitions and interest groups constrain administrative agencies.</p>
+<h3 id="economics-for-the-public-sector">Economics for the Public Sector</h3>
+<p>Analyzes market failures, externalities, public goods provision, and the economic rationale for government intervention and regulatory policy.</p>
+<p><a href="https://ocw.mit.edu/courses/14-41-public-finance-and-public-policy-fall-2024/" target="_blank" rel="noopener noreferrer">Public Finance and Public Policy (MIT OpenCourseWare/Jonathan Gruber)</a> - The primary multimedia course for this subject, offering complete university video lectures and problem sets on externalities, social insurance, and cost-benefit principles.</p>
+<p><a href="https://books.google.com/books?isbn=9780393925227" target="_blank" rel="noopener noreferrer">Economics of the Public Sector (Joseph E. Stiglitz &amp; Jay K. Rosengard)</a> - A comprehensive textbook alternative to Gruber's course for learners who prefer a systematic, print-based treatment of welfare economics, efficiency, and taxation.</p>
+<p><a href="https://www.core-econ.org/the-economy/" target="_blank" rel="noopener noreferrer">The Economy (CORE-Econ)</a> - An open-access companion reader that introduces economic governance, collective action, and market failures from a broader societal perspective.</p>
+<h3 id="public-organization-theory">Public Organization Theory</h3>
+<p>Explores organizational behavior, bureaucratic structure, informal networks, and systemic change within public sector agencies.</p>
+<p><a href="https://books.google.com/books?isbn=9781119705895" target="_blank" rel="noopener noreferrer">Understanding and Managing Public Organizations (Hal G. Rainey, Sergio Fernandez, &amp; Deanna Malatesta)</a> - The definitive core textbook analyzing the unique operating environments, goal ambiguity, public service motivation, and bureaucratic structures of public agencies.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior (OpenStax)</a> - An optional open-access supplement that covers baseline workplace psychology, group dynamics, and organizational design for learners who want foundational business-school concepts before focusing on government.</p>
+<h3 id="public-management-strategic-leadership-and-public-value">Public Management, Strategic Leadership, and Public Value</h3>
+<p>Examines executive leadership models, administrative competencies, and strategic frameworks for creating public value within public and non-profit agencies.</p>
+<p><a href="https://pll.harvard.edu/course/leadership-purposeful-change-creating-public-value" target="_blank" rel="noopener noreferrer">Leadership for Purposeful Change: Creating Public Value (Harvard University/Mark Moore)</a> - A free-to-audit online course where Mark Moore introduces the strategic triangle framework for aligning authorizing environments, operational capability, and public value creation.</p>
+<p><a href="https://books.google.com/books?isbn=9780674175587" target="_blank" rel="noopener noreferrer">Creating Public Value: Strategic Management in Government (Mark H. Moore)</a> - The canonical monograph on strategic management in government, serving as the in-depth textual companion to Moore's online course.</p>
+<p><a href="https://books.google.com/books?isbn=9780765647023" target="_blank" rel="noopener noreferrer">Leadership in Public Organizations: An Introduction (Montgomery Van Wart)</a> - A complementary guide focusing on the operational leadership styles, administrative competencies, and change management tools needed inside public agencies.</p>
+<h3 id="public-human-resource-management">Public Human Resource Management</h3>
+<p>Covers civil service merit systems, public-sector recruitment, workplace diversity, employee motivation, and collective bargaining.</p>
+<p><a href="https://books.google.com/books?isbn=9781071848906" target="_blank" rel="noopener noreferrer">Human Resource Management in Public Service: Paradoxes, Processes, and Problems (Evan M. Berman et al.)</a> - The primary narrative textbook covering civil service history, merit protections, position classification, compensation, and public-sector labor relations.</p>
+<p><a href="https://books.google.com/books?isbn=9781032516677" target="_blank" rel="noopener noreferrer">Public Personnel Management: Current Concerns, Future Challenges (Norma M. Riccucci, Ed.)</a> - A complementary reader exploring contemporary controversies and legal debates, including civil service reform, affirmative action, and public pensions.</p>
+<h3 id="public-budgeting-and-financial-management">Public Budgeting and Financial Management</h3>
+<p>Examines the politics of the budgetary cycle, resource allocation conflicts, governmental accounting, revenue systems, and fiscal administration.</p>
+<p><a href="https://uw.pressbooks.pub/financialstrategy/" target="_blank" rel="noopener noreferrer">Financial Strategy for Public Managers (Sharon Kioko &amp; Justin Marlowe)</a> - The primary open-access technical textbook, providing applied instruction on governmental accounting, financial statement analysis, and cost modeling.</p>
+<p><a href="https://books.google.com/books?isbn=9781544325057" target="_blank" rel="noopener noreferrer">The Politics of Public Budgeting: Getting and Spending, Borrowing and Balancing (Irene S. Rubin)</a> - A complementary core text focusing on the political side of fiscal decision-making, executive-legislative negotiations, and spending trade-offs.</p>
+<p><a href="https://www.edx.org/learn/finance/international-monetary-fund-public-financial-management" target="_blank" rel="noopener noreferrer">Public Financial Management (IMFx/edX)</a> - An interactive online course alternative covering the entire public financial management cycle, including budget preparation, treasury execution, and fiscal risk.</p>
+<p><a href="https://books.google.com/books?isbn=9781305953680" target="_blank" rel="noopener noreferrer">Fiscal Administration: Analysis and Applications for the Public Sector (John L. Mikesell)</a> - An exhaustive commercial reference text alternative for learners seeking comprehensive technical detail on tax structures, user charges, and municipal bond issuance.</p>
+<h3 id="public-policy-process">Public Policy Process</h3>
+<p>Surveys how policy issues emerge, reach institutional agendas, undergo legislative formulation, and achieve political adoption.</p>
+<p><a href="https://books.google.com/books?isbn=9781138495548" target="_blank" rel="noopener noreferrer">An Introduction to the Policy Process (Thomas A. Birkland)</a> - The core textbook explaining agenda setting, policy subsystems, advocacy coalitions, policy instruments, and the stages of policy formulation.</p>
+<p><a href="https://www.coursera.org/learn/using-public-policy-for-social-change" target="_blank" rel="noopener noreferrer">Using Public Policy for Social Change (Coursera/University of Michigan)</a> - A free-to-audit online course alternative or companion that explores policy cycles with an emphasis on citizen advocacy and community-level change.</p>
+<h3 id="policy-analysis-and-program-evaluation">Policy Analysis and Program Evaluation</h3>
+<p>Introduces criteria-based decision analysis, cost-benefit reasoning, and systematic methodologies for evaluating public program outcomes.</p>
+<p><a href="https://books.google.com/books?isbn=9781071884133" target="_blank" rel="noopener noreferrer">A Practical Guide for Policy Analysis: The Eightfold Path to More Effective Problem Solving (Eugene Bardach &amp; Eric M. Patashnik)</a> - The most accessible, practitioner-oriented primer on defining policy problems, assembling evaluative criteria, projecting outcomes, and confronting trade-offs.</p>
+<p><a href="https://books.google.com/books?isbn=9781138216471" target="_blank" rel="noopener noreferrer">Policy Analysis: Concepts and Practice (David L. Weimer &amp; Aidan R. Vining)</a> - A comprehensive academic textbook alternative to Bardach, offering formal microeconomic grounding, criteria-alternative matrices, and cost-benefit modeling.</p>
+<p><a href="https://stacks.cdc.gov/view/cdc/26245" target="_blank" rel="noopener noreferrer">Introduction to Program Evaluation for Public Health Programs: A Self-Study Guide (Centers for Disease Control and Prevention)</a> - A free, open-access field guide focusing specifically on the evaluation stage, teaching logic models, stakeholder engagement, and indicator design.</p>
+<h3 id="policy-implementation-and-street-level-bureaucracy">Policy Implementation and Street-Level Bureaucracy</h3>
+<p>Examines frontline public service delivery, administrative discretion, rule enforcement dilemmas, and common causes of implementation breakdown.</p>
+<p><a href="https://books.google.com/books?isbn=9780871545442" target="_blank" rel="noopener noreferrer">Street-Level Bureaucracy: Dilemmas of the Individual in Public Services (Michael Lipsky)</a> - The seminal treatise detailing how frontline workers, including police officers, teachers, and caseworkers, exercise daily discretion to effectively shape public policy.</p>
+<h3 id="administrative-law-and-regulatory-procedure">Administrative Law and Regulatory Procedure</h3>
+<p>Governs statutory delegations of power, notice-and-comment rulemaking, administrative adjudication, due process, and judicial review of agency actions.</p>
+<p><a href="https://www.youtube.com/playlist?list=PLWwcngsYgoUXTBxtM1cr9ThwGsTTR4XU_" target="_blank" rel="noopener noreferrer">Administrative Law [No. 86] (The Federalist Society/YouTube)</a> - A structured video lecture series introducing constitutional nondelegation, administrative rulemaking, adjudication, and judicial deference doctrines.</p>
+<p><a href="https://books.google.com/books?isbn=9798892073592" target="_blank" rel="noopener noreferrer">Examples &amp; Explanations: Administrative Law (William F. Funk &amp; Richard H. Seamon)</a> - A complementary problem-oriented study guide that uses concrete scenarios and explanations to test comprehension of administrative law principles.</p>
+<h3 id="ethics-integrity-and-public-accountability">Ethics, Integrity, and Public Accountability</h3>
+<p>Addresses conflicts of interest, moral decision-making frameworks, whistleblower protections, anti-corruption systems, and democratic oversight mechanisms.</p>
+<p><a href="https://books.google.com/books?isbn=9781118109861" target="_blank" rel="noopener noreferrer">The Ethics Challenge in Public Service: A Problem-Solving Guide (Carol W. Lewis &amp; Stuart C. Gilman)</a> - The foundational practitioner guide to recognizing and resolving ethical dilemmas, conflicts of interest, and integrity challenges in public office.</p>
+<p><a href="https://www.coursera.org/learn/ethics-in-public-policy" target="_blank" rel="noopener noreferrer">Ethics in Public Policy (Coursera/O.P. Jindal Global University)</a> - A free-to-audit online course alternative covering moral philosophy, rights-based versus utilitarian trade-offs, and public accountability systems.</p>
+    </article>
+  </main>
 
 </body>
 </html>

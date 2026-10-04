@@ -1,169 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
 
-<title>Advanced Topics</title>
-<link rel="stylesheet" href="/public-administration/style.css">
-<meta name="description" content="">
+  <title>Advanced Topics</title>
+  <meta name="description" content="Advanced Topics curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
 
-<link rel="canonical" href="https://hocbigg.github.io/public-administration/">
+  <link rel="canonical" href="https://hocbigg.github.io/public-administration/advanced_topics.html">
+  <meta property="og:title" content="Advanced Topics">
+  <meta property="og:description" content="Advanced Topics curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/public-administration/advanced_topics.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
 
-<meta property="og:title" content="Advanced Topics">
-<meta property="og:description" content="">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hocbigg.github.io/public-administration/">
-<meta name="author" content="hocbigg">
-<link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
 </head>
-
 <body>
 
-<nav>
-<a href="/">Hocbigg</a>
-<a href="/public-administration/">Public-Administration</a>
-<a href="/public-administration/advanced_topics.html">Advanced Topics</a>
-<a href="/public-administration/extras/courses.html">Extra Courses</a>
-<a href="/public-administration/extras/readings.html">Extra Reading</a>
-<a href="https://github.com/hocbigg/public-administration/" target="_blank">View on Github</a>
-</nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<main>
-<article>
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/public-administration/">Public Administration</a></li>
+      <li><a href="/public-administration/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/public-administration/extras/readings.html">Extra Readings</a></li>
+      <li><a href="/public-administration/extras/courses.html">Extra Courses</a></li>
+      <li><a href="https://github.com/hocbigg/public-administration" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
 
 <h1 id="advanced-topics">Advanced Topics</h1>
 <ul>
-<li><a href="#methods-evidence-and-analysis">Methods, Evidence, and Analysis</a></li>
-<li><a href="#public-finance-and-budgeting">Public Finance and Budgeting</a></li>
-<li><a href="#applied-policy-domains">Applied Policy Domains</a></li>
-<li><a href="#comparative-international-and-nonprofit-administration">Comparative, International, and Nonprofit Administration</a></li>
+<li><a href="#advanced-quantitative-methods-and-program-evaluation">Advanced Quantitative Methods and Program Evaluation</a>
+  Master causal inference, applied cost-benefit modeling, public-sector data science pipelines, and configurational comparative methods.</li>
+<li><a href="#advanced-public-financial-management-and-municipal-finance">Advanced Public Financial Management and Municipal Finance</a>
+  Examine capital improvement programming, project finance deal structures, fiscal federalism, and municipal fiscal distress diagnostics.</li>
+<li><a href="#digital-governance-innovation-and-algorithmic-public-administration">Digital Governance, Innovation, and Algorithmic Public Administration</a>
+  Analyze digital-era state transformations, automated bureaucratic decision-making, algorithmic accountability, and behavioral public interventions.</li>
+<li><a href="#comparative-governance-state-capacity-and-development-administration">Comparative Governance, State Capacity, and Development Administration</a>
+  Compare global administrative traditions, state capacity development, international secretariats, and systemic anti-corruption regimes.</li>
+<li><a href="#nonprofit-leadership-philanthropy-and-hybrid-governance">Nonprofit Leadership, Philanthropy, and Hybrid Governance</a>
+  Explore third-sector fiduciary board governance, strategic philanthropy, complex service contracting, and social enterprise design.</li>
 </ul>
-<p>The remaining four sections are optional tracks that build on the core. You can choose one, two, or more depending on your interests and goals. They are:</p>
-<ul>
-<li>
-<p><strong>Methods, Evidence, and Analysis</strong><br />
-  (data, research, and analytical skills for evidence-based public work)</p>
-</li>
-<li>
-<p><strong>Public Finance and Budgeting</strong><br />
-  (money, taxation, budgets, and fiscal decision-making in government)</p>
-</li>
-<li>
-<p><strong>Applied Policy Domains</strong><br />
-  (specific policy areas such as environment, health, and digital government)</p>
-</li>
-<li>
-<p><strong>Comparative, International, and Nonprofit Administration</strong><br />
-  (how public administration works in other countries, in international development, and in nonprofit/third-sector organizations)</p>
-</li>
-</ul>
-<h2 id="methods-evidence-and-analysis">Methods, Evidence, and Analysis</h2>
-<table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Why study?</th>
-<th>Resource</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Research Methods for Public Administration</td>
-<td>Enables systematic inquiry and evidence-based practice.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.open.edu/openlearn/society-politics-law/research-methods-public-administration/content-section-0">Research Methods in Public Administration – Open University OpenLearn</a></td>
-</tr>
-<tr>
-<td>Statistics for Public Policy</td>
-<td>Builds data literacy for analysis and decision-making.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.openintro.org/book/os/">OpenIntro Statistics (free textbook)</a></td>
-</tr>
-<tr>
-<td>Policy Analysis &amp; Evaluation</td>
-<td>Applies CBA, program evaluation, and decision frameworks.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.cdc.gov/evaluation/framework/index.htm">CDC Program Evaluation Framework (free)</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-finance-and-budgeting">Public Finance and Budgeting</h2>
-<table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Why study?</th>
-<th>Resource</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Public Finance</td>
-<td>Understands taxation, expenditure, and fiscal federalism.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://openstax.org/details/books/principles-economics-3e">Public Finance – OpenStax</a> (Related core economics text; specific public finance open texts align here.)</td>
-</tr>
-<tr>
-<td>Public Budgeting</td>
-<td>Covers budgeting systems, control, and accountability.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.govinfo.gov/content/pkg/BUDGET-2025-DOC/pdf/BUDGET-2025-DOC.pdf">A Citizen’s Guide to the Federal Budget – U.S. Government Publishing Office</a> (Latest citizen's guide editions available via govinfo.)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="applied-policy-domains">Applied Policy Domains</h2>
-<table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Why study?</th>
-<th>Resource</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Environmental Policy</td>
-<td>Addresses regulation, sustainability, and collective action problems.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.open.edu/openlearn/nature-environment/environmental-management">Open University – Environmental Management</a></td>
-</tr>
-<tr>
-<td>Health Policy</td>
-<td>Examines access, equity, and system governance.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://ocw.jhsph.edu/courses/healthpolicy/">Johns Hopkins OpenCourseWare – Health Policy</a></td>
-</tr>
-<tr>
-<td>Digital Government &amp; Innovation</td>
-<td>Explores e-government, AI, and service delivery modernization.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.oecd.org/gov/digital-government/toolkit/">OECD – Digital Government Policy Toolkit</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="comparative-international-and-nonprofit-administration">Comparative, International, and Nonprofit Administration</h2>
-<table>
-<thead>
-<tr>
-<th>Subject</th>
-<th>Why study?</th>
-<th>Resource</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Comparative Public Administration</td>
-<td>Identifies institutional variation and reform lessons.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://swayam.gov.in/explorer?category=Public%20Administration">Comparative Public Administration – Swayam (free)</a> (Search Swayam for related free courses.)</td>
-</tr>
-<tr>
-<td>International Development Administration</td>
-<td>Applies administration to aid, capacity-building, and SDGs.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://olc.worldbank.org/">World Bank Open Learning Campus</a></td>
-</tr>
-<tr>
-<td>Nonprofit &amp; Third Sector Governance</td>
-<td>Understands hybrid governance and service delivery.</td>
-<td><a target="_blank" rel="noopener noreferrer" href="https://www.hks.harvard.edu/centers/cpl/publications">Managing Nonprofit Organizations – Harvard Kennedy School (free cases/lectures)</a> (Explore cases and related nonprofit leadership materials.)</td>
-</tr>
-</tbody>
-</table>
-</article>
-</main>
+<h2 id="advanced-quantitative-methods-and-program-evaluation">Advanced Quantitative Methods and Program Evaluation</h2>
+<p>Covers econometric causal inference, microeconomic appraisal techniques, administrative data science, and set-theoretic evaluation methods for evidence-based policymaking.</p>
+<p>Causal Inference &amp; Quasi-Experimental Evaluation: <a href="https://mitxonline.mit.edu/courses/course-v1:MITxT+JPAL101x/" target="_blank" rel="noopener noreferrer">Evaluating Social Programs (MITx / edX)</a> - An applied training course designed by the Abdul Latif Jameel Poverty Action Lab (J-PAL) on designing randomized evaluations, mitigating threats to validity, and measuring public policy outcomes.</p>
+<p>Causal Inference &amp; Quasi-Experimental Evaluation: <a href="https://mixtape.scunning.com/" target="_blank" rel="noopener noreferrer">Causal Inference: The Mixtape (Scott Cunningham)</a> - An open-access guide detailing difference-in-differences, instrumental variables, regression discontinuity designs, and synthetic controls with executable code.</p>
+<p>Applied Cost-Benefit &amp; Cost-Effectiveness Analysis: <a href="https://books.google.com/books?isbn=9781108401296" target="_blank" rel="noopener noreferrer">Cost-Benefit Analysis: Concepts and Practice (Anthony E. Boardman et al.)</a> - The definitive guide to determining social discount rates, calculating shadow prices, monetizing non-market impacts, and modeling risk in public investments.</p>
+<p>Administrative Data Science &amp; Public Sector Analytics: <a href="https://www.coursera.org/specializations/data-analytics-in-the-public-sector-with-r" target="_blank" rel="noopener noreferrer">Data Analytics in the Public Sector with R Specialization (Coursera / University of Michigan)</a> - A practical program teaching data wrangling, reproducible workflows, and statistical modeling using authentic administrative datasets and public records.</p>
+<p>Administrative Data Science &amp; Public Sector Analytics: <a href="https://www.bitbybitbook.com/" target="_blank" rel="noopener noreferrer">Bit by Bit: Social Research in the Digital Age (Matthew J. Salganik)</a> - An open-access text on leveraging big administrative data trails, automated surveys, and digital field experiments for policy research.</p>
+<p>Configurational Comparative Analysis: <a href="https://www.youtube.com/watch?v=NxbkxfvhxgE" target="_blank" rel="noopener noreferrer">Qualitative Comparative Analysis (QCA): Principles and Application (Eva Thomann / Oxford University)</a> - A structured university masterclass on set-theoretic logic, truth table construction, and diagnosing causal complexity in public policy.</p>
+<p>Configurational Comparative Analysis: <a href="https://books.google.com/books?isbn=9780226702759" target="_blank" rel="noopener noreferrer">Redesigning Social Inquiry: Fuzzy Sets and Beyond (Charles C. Ragin)</a> - The seminal treatise on fuzzy-set qualitative comparative analysis (fsQCA) for examining multiple conjunctural causation in institutional reforms.</p>
+<h2 id="advanced-public-financial-management-and-municipal-finance">Advanced Public Financial Management and Municipal Finance</h2>
+<p>Addresses the mechanics of long-term capital financing, debt market instruments, intergovernmental fiscal architecture, and local fiscal health evaluation.</p>
+<p>Capital Budgeting &amp; Infrastructure Project Finance: <a href="https://www.coursera.org/learn/infrastructure-investing" target="_blank" rel="noopener noreferrer">Financing and Investing in Infrastructure (Coursera / Università Bocconi)</a> - An in-depth course on capital budgeting, financial sustainability, syndicate loan structuring, and risk allocation in public infrastructure deals.</p>
+<p>Capital Budgeting &amp; Infrastructure Project Finance: <a href="https://books.google.com/books?isbn=9780123910585" target="_blank" rel="noopener noreferrer">Principles of Project Finance (E. R. Yescombe)</a> - A comprehensive reference on concession agreements, contractual risk-shifting, and debt service coverage metrics for public-private capital works.</p>
+<p>Municipal Budgeting &amp; Subnational Fiscal Administration: <a href="https://books.google.com/books?isbn=9780873264358" target="_blank" rel="noopener noreferrer">A Budgeting Guide for Local Government (Robert L. Bland &amp; Michael R. Overton)</a> - The core practitioner manual published by ICMA on revenue forecasting, local capital programs, and balancing operational budgets.</p>
+<p>Fiscal Federalism &amp; Subnational Revenue Architecture: <a href="https://books.google.com/books?isbn=9780521518215" target="_blank" rel="noopener noreferrer">Fiscal Federalism: Principles and Practices of Multiorder Governance (Robin Boadway &amp; Anwar Shah)</a> - Explores the economic principles governing subnational tax assignments, equalisation formulas, and intergovernmental grant designs.</p>
+<p>Municipal Fiscal Distress &amp; Financial Health Diagnostics: <a href="https://books.google.com/books?isbn=9780765636898" target="_blank" rel="noopener noreferrer">Financial Management in the Public Sector: Tools, Applications, and Cases (XiaoHu Wang)</a> - Provides applied frameworks and financial indicator systems to evaluate structural budget deficits, pension liabilities, and solvency risks in public agencies.</p>
+<h2 id="digital-governance-innovation-and-algorithmic-public-administration">Digital Governance, Innovation, and Algorithmic Public Administration</h2>
+<p>Explores the transformation of state agencies through digital platforms, artificial intelligence in administrative law, civic tech, and behavioral insights.</p>
+<p>Digital-Era Governance &amp; Platform Transformation: <a href="https://www.coursera.org/learn/digitalgovernance" target="_blank" rel="noopener noreferrer">Digital Governance (Coursera / Erasmus University Rotterdam)</a> - Explores how emerging digital technologies alter administrative power, regulatory strategies, and public service architecture.</p>
+<p>Digital-Era Governance &amp; Platform Transformation: <a href="https://books.google.com/books?isbn=9780199547005" target="_blank" rel="noopener noreferrer">Digital Era Governance: IT Corporations, the State, and e-Government (Patrick Dunleavy et al.)</a> - The foundational monograph analyzing how client-centered digital platforms and information networks supersede fragmented bureaucratic structures.</p>
+<p>Artificial Intelligence &amp; Algorithmic Accountability: <a href="https://www.acus.gov/report/government-algorithm-artificial-intelligence-federal-administrative-agencies" target="_blank" rel="noopener noreferrer">Government by Algorithm: Artificial Intelligence in Federal Administrative Agencies (ACUS / Stanford Law / NYU)</a> - A landmark open-access report examining the legal and administrative implications of automated rulemaking, algorithmic enforcement, and due process.</p>
+<p>Open Government &amp; Distributed Civic Intelligence: <a href="https://books.google.com/books?isbn=9780674286054" target="_blank" rel="noopener noreferrer">Smart Citizens, Smarter State: The Technologies of Expertise and the Future of Governing (Beth Simone Noveck)</a> - Examines how public institutions can match public decision-making challenges with distributed expertise using open data, crowdsourcing, and civic technologies.</p>
+<p>Behavioral Public Administration &amp; Administrative Burden: <a href="https://www.edx.org/learn/economics/indian-institute-of-management-bangalore-behavioral-economics-and-public-policy" target="_blank" rel="noopener noreferrer">Behavioral Economics and Public Policy (edX / IIM Bangalore)</a> - A specialized course on cognitive biases, choice architecture, and behavioral interventions that enhance program compliance and public service uptake.</p>
+<p>Behavioral Public Administration &amp; Administrative Burden: <a href="https://books.google.com/books?isbn=9780262539401" target="_blank" rel="noopener noreferrer">Behavioral Insights (Michael Hallsworth &amp; Elspeth Kirkman)</a> - An applied handbook by Behavioral Insights Team pioneers on designing, running, and scaling behavioral trials to eliminate bureaucratic frictions.</p>
+<h2 id="comparative-governance-state-capacity-and-development-administration">Comparative Governance, State Capacity, and Development Administration</h2>
+<p>Investigates bureaucratic performance across different political regimes, the historical development of state autonomy, multilateral agencies, and anti-corruption systems.</p>
+<p>Comparative Administrative Systems &amp; Management Reform: <a href="https://books.google.com/books?isbn=9780415743402" target="_blank" rel="noopener noreferrer">The Politics of Bureaucracy: An Introduction to Comparative Public Administration (B. Guy Peters)</a> - A comprehensive analysis comparing executive staffing, civil service systems, administrative cultures, and political control across world regions.</p>
+<p>Comparative Administrative Systems &amp; Management Reform: <a href="https://books.google.com/books?isbn=9780198795179" target="_blank" rel="noopener noreferrer">Public Management Reform: A Comparative Analysis (Christopher Pollitt &amp; Geert Bouckaert)</a> - A comparative study examining the operational realities, trajectories, and outcomes of managerial and Neo-Weberian administrative reforms.</p>
+<p>State Capacity &amp; Bureaucratic Autonomy: <a href="https://books.google.com/books?isbn=9780691037363" target="_blank" rel="noopener noreferrer">Embedded Autonomy: States and Industrial Transformation (Peter B. Evans)</a> - The classic institutional work examining how professionalized civil service structures and selective private-sector networks drive state capacity.</p>
+<p>State Capacity &amp; Bureaucratic Autonomy: <a href="https://books.google.com/books?isbn=9780801442926" target="_blank" rel="noopener noreferrer">State-Building: Governance and World Order in the 21st Century (Francis Fukuyama)</a> - Analyzes the distinction between the scope of state activities and the institutional strength of public authority in emerging economies.</p>
+<p>International Public Administration &amp; Global Secretariats: <a href="https://www.coursera.org/learn/international-organizations-management" target="_blank" rel="noopener noreferrer">International Organizations Management (Coursera / University of Geneva)</a> - An applied course focusing on the inner administrative workflows, leadership constraints, and stakeholder coordination within multilateral agencies.</p>
+<p>International Public Administration &amp; Global Secretariats: <a href="https://books.google.com/books?isbn=9780801488238" target="_blank" rel="noopener noreferrer">Rules for the World: International Organizations in Global Politics (Michael N. Barnett &amp; Martha Finnemore)</a> - Investigates how international bureaucracies create social knowledge, exercise discretionary autonomy, and establish global regulatory norms.</p>
+<p>Institutional Integrity &amp; Anti-Corruption Systems: <a href="https://www.coursera.org/learn/what-is-corruption-anti-corruption-compliance" target="_blank" rel="noopener noreferrer">What is Corruption: Anti-Corruption and Compliance (Coursera / University of Pennsylvania)</a> - An applied legal and regulatory course focusing on bribery legislation, risk-assessment red flags, and organizational compliance systems.</p>
+<p>Institutional Integrity &amp; Anti-Corruption Systems: <a href="https://books.google.com/books?isbn=9781107110977" target="_blank" rel="noopener noreferrer">The Quest for Good Governance: How Societies Build Control of Corruption (Alina Mungiu-Pippidi)</a> - An empirical study of the political economy of corruption control, shifting societies from institutional favoritism to ethical universalism.</p>
+<h2 id="nonprofit-leadership-philanthropy-and-hybrid-governance">Nonprofit Leadership, Philanthropy, and Hybrid Governance</h2>
+<p>Examines the strategic management of non-governmental institutions, philanthropic resource mobilization, public-private service contracting, and social enterprises.</p>
+<p>Nonprofit Governance &amp; Executive Board Leadership: <a href="https://www.coursera.org/specializations/improving-leadership-and-governance-in-nonprofit-organizations" target="_blank" rel="noopener noreferrer">Improving Leadership &amp; Governance in Nonprofit Organizations Specialization (Coursera / University at Buffalo)</a> - A practical course series on fiduciary responsibilities, board-executive dynamics, and strategic direction in mission-driven organizations.</p>
+<p>Nonprofit Governance &amp; Executive Board Leadership: <a href="https://books.google.com/books?isbn=9781394198863" target="_blank" rel="noopener noreferrer">The Jossey-Bass Handbook of Nonprofit Leadership and Management (David O. Renz et al., Eds.)</a> - The primary reference manual covering the legal framework, strategic planning, volunteer administration, and financial oversight of third-sector agencies.</p>
+<p>Strategic Philanthropy &amp; Capital Mobilization: <a href="https://books.google.com/books?isbn=9780226266268" target="_blank" rel="noopener noreferrer">Strategic Giving: The Art and Science of Philanthropy (Peter Frumkin)</a> - Analyzes the logic of institutional giving, theories of change, donor intent, and methods for evaluating the social impact of philanthropic grants.</p>
+<p>Public-Private Contracting &amp; Procurement Management: <a href="https://books.google.com/books?isbn=9781107038622" target="_blank" rel="noopener noreferrer">Complex Contracting: Government Purchasing in the Wake of the US Coast Guard's Deepwater Program (Trevor L. Brown et al.)</a> - An empirical guide on mitigating principal-agent risks, structuring incentives, and managing relational contracts for outsourced public services.</p>
+<p>Social Entrepreneurship &amp; Hybrid Organizing: <a href="https://books.google.com/books?isbn=9780199283880" target="_blank" rel="noopener noreferrer">Social Entrepreneurship: New Models of Sustainable Social Change (Alex Nicholls, Ed.)</a> - Explores institutional models that combine social missions with commercial revenue, cross-sector partnerships, and social impact measurement.</p>
+    </article>
+  </main>
 
 </body>
 </html>
